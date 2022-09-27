@@ -139,6 +139,54 @@
       }
     });
 
+    //======== tiny slider for portfolio
+    tns({
+      container: '.zimmerOhel',
+      items: 3,
+      slideBy: 'page',
+      autoplay: false,
+      mouseDrag: true,
+      gutter: 30,
+      nav: true,
+      navPosition: 'bottom',
+      controls: false,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        765: {
+          items: 2,
+        },
+        1024: {
+          items: 3,
+        }
+      }
+    });
+
+    //======== tiny slider for portfolio
+    tns({
+      container: '.zimmerAttrakziot',
+      items: 3,
+      slideBy: 'page',
+      autoplay: false,
+      mouseDrag: true,
+      gutter: 30,
+      nav: true,
+      navPosition: 'bottom',
+      controls: false,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        765: {
+          items: 2,
+        },
+        1024: {
+          items: 3,
+        }
+      }
+    });
+
       
 
 })();
