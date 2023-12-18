@@ -1,21 +1,14 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      '*.html',
-      './assets/js/main.js'
-    ]
+  future: {
+    // removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+    // defaultLineHeights: true,
+    // standardFontWeights: true
   },
+  purge: [],
   theme: {
-    extend: {
-      fontFamily: {
-        'amatic': ['"Amatic SC"', 'cursive']
-      },
-      inset: {
-        '100': '100%',
-      }
-    },
+    extend: {}
   },
   variants: {},
-  plugins: [],
+  plugins: []
 }

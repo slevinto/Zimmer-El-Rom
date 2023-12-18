@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="he" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta name="description" content="שני צימרים מיוחדים בצפון רמת הגולן">
+       
+    <title>צימר אל-רום</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/img/logo.png" />
+    <link rel="icon" href="/img/logo.png" />
+    
+    <link rel='stylesheet' type="text/css" href='/css/fullcalendar.css'>    
+    <link rel='stylesheet' type="text/css" href='/css/overall.css'>
+    <link rel="stylesheet" type="text/css" href="/css/tailwind.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+  </head>
+  <body class="bg-white text-black">
+    <header id="header-wrap" class="relative" dir="rtl">
+      <div class="navigation fixed top-0 left-0 w-full z-30">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg flex justify-between relative text-xl" style="font-family: 'Heebo'; padding: 20px">
+            <div class="navbar-brand items-center" style="display: inline-flex">
+              <a class="navbar-brand" href="https://waze.com/ul/hsvcky0c0s">
+                <p class="px-5">צימר אל-רום</p>
+              </a>
+              <a class="navbar-brand" href="https://waze.com/ul/hsvcky0c0s">
+                <div class="contact-icon">
+                  <i class="fab fa-waze"></i>
+                </div> 
+              </a>
+            </div>
+            <div class="navbar-brand items-center" style="display: inline-flex">
+              <a class="navbar-brand items-center" href="tel:+972522796275">
+                <p class="px-5">0522-796-275</p>
+              </a>
+              <a class="navbar-brand items-center" href="tel:+972522796275">
+                <div class="contact-icon">
+                  <i class="fa fa-phone"></i>
+                </div>  
+              </a> 
+              <a class="navbar-brand items-center" href="https://wa.me/972522796275"> 
+                <div class="contact-icon">
+                  <i class="fa fa-whatsapp"></i>
+                </div>
+              </a>                    
+            </div>
+          </nav>
+        </div>
+      </div>      
+    </header>
+    
+    <div class="sm:font-bold pt-24 flex">
+      <div id="calendar" style="max-width: 25%; margin: 48px"></div>
+      <div style="min-width: 20% !important">
+        <div class="text-xl items-right" style="margin: 48px">
+          <p id="title" class="text-xs font-bold py-2" style="font-family: 'Heebo'; display: flex; justify-content: flex-end"></p>
+        </div> 
+        <div style="display: flex; justify-content: flex-end"> 
+          <p id="guests" style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end"></p>
+          <i class="fa fa-person-dress" style="margin-left: 20px"></i>  
+        </div>         
+        <div style="display: flex; justify-content: flex-end"> 
+          <p id="price" style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end"></p>
+          <i class="fas fa-shekel-sign" style="margin-left: 16px"></i>
+        </div>
+        <p id="price2" style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end; margin-right: 36px"></p>
+        <div style="display: flex; justify-content: flex-end"> 
+          <p id="rule" style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end"></p>
+          <i class="far fa-clock" style="margin-left: 16px"></i>
+        </div>
+        <hr class="m-4">
+        <div style="display: flex; justify-content: flex-end"> 
+          <p id="bed" style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end"></p>
+          <i class="fas fa-bed" style="margin-left: 12px"></i>
+        </div>
+        <div style="display: flex; justify-content: flex-end"> 
+          <p style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end">מטבח: כיריים אינדוקציה, מקרר גדול</p>
+          <i class="fas fa-kitchen-set" style="margin-left: 14px"></i>
+        </div>
+        <p style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end; margin-right: 36px">קומקום חשמלי, מיקרוגל, כלים לבישול </p>
+        <div id="fireplace" style="display: flex; justify-content: flex-end"> 
+          <p style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end">קמין עצים</p>
+          <i class="fas fa-fire" style="margin-left: 18px"></i>
+        </div>
+        <div style="display: flex; justify-content: flex-end"> 
+          <p style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end">מזגן</p>
+          <i class="fas fa-temperature-arrow-up" style="margin-left: 12px"></i>
+        </div>
+        <div style="display: flex; justify-content: flex-end"> 
+          <p style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end">אינטרנת אלחוטי סיב אופטי</p>
+          <i class="fa fa-wifi" style="margin-left: 12px"></i>
+        </div>
+        <div style="display: flex; justify-content: flex-end"> 
+          <p style="font-family: 'Heebo'; font-size: 16px; display: flex; justify-content: flex-end">בחוץ: פינת מנגל</p>
+          <i class="fa fa-tree" style="margin-left: 20px"></i>
+        </div>
+      </div>
+
+      <section id='Botz'>
+        <div  class="zimmerBotz" >
+          <img src="/img/slidesBotz/1.jpg" style="height: 400px"></img>
+          <img src="/img/slidesBotz/2.jpg" style="height: 400px"></img>
+          <img src="/img/slidesBotz/3.jpg" style="height: 400px"></img>
+          <img src="/img/slidesBotz/4.jpg" style="height: 400px"></img>
+          <img src="/img/slidesBotz/5.jpg" style="height: 400px"></img>
+          <img src="/img/slidesBotz/6.jpg" style="height: 400px"></img>
+          <img src="/img/slidesBotz/7.jpg" style="height: 400px"></img>
+          <img src="/img/slidesBotz/8.jpg" style="height: 400px"></img>
+        </div>  
+      </section>
+
+      <section id='Etz'>
+        <div class="zimmerEtz">
+          <img src="/img/slidesEtz/1.jpg" style="height: 400px"></img>
+          <img src="/img/slidesEtz/2.jpg" style="height: 400px"></img>
+          <img src="/img/slidesEtz/3.jpg" style="height: 400px"></img>
+          <img src="/img/slidesEtz/4.jpg" style="height: 400px"></img>
+          <img src="/img/slidesEtz/5.jpg" style="height: 400px"></img>
+          <img src="/img/slidesEtz/6.jpg" style="height: 400px"></img>
+          <img src="/img/slidesEtz/7.jpg" style="height: 400px"></img>
+          <img src="/img/slidesEtz/8.jpg" style="height: 400px"></img>
+        </div>
+      </section>
+    </div>  
+    <section id="ohel" class="text-center">
+      <hr class="border-white lg:mx-56 pb-12">
+      <h3 class="text-3xl font-bold py-2" style="font-family: 'Heebo'">מסעדות בסביבה</h3>        
+    </section>
+   
+    <section class="carousel-area pb-12" style="font-family: 'Heebo'; font-weight: bold; font-size: 12px;">
+      <div class="container">
+        <div class="flex">
+          <div class="w-full relative">
+            <div class="zimmerOhel">
+              <div class="text-center px-5 py-3">
+                <img class="w-full" src="/img/slidesOhel/3.jpg" alt="">
+                <p>
+                    מסעדת בשרים איכותית העושה שימוש בחומרי גלם מקומיים. חובבי הבשר יוכלו ליהנות ממנות שמקורן בבשר המגיע מעדרי הבקר האיכותיים של צפון רמת הגולן המעושן ומיושן במקום, לצד המנות מוגשים כמובן בירות ויינות מקומיים המיוצרים ביקבים ובמבשלות בגולן. 
+  המסעדה נמצאת ממול חוות הסוסים.
+  להזמנת מקום 
+  052-8514434 
+                </p>
+              </div>
+              <div class="text-center px-5 py-3">
+                <img class="w-full" src="/img/slidesOhel/1.jpg" alt="">
+                <p>במרחק של 10 דק' מהצימר בית קפה קטן בעין זיוון. שם תוכלו להתפנק
+                </p>
+                <p> 
+                  .בארוחת בוקר מגוונת ומפנקת במיוחד 
+                </p>
+                <p>פתוח בימים: ג'-ש' בין השעות - 09:00 - 13:00            
+                </p>
+              </div>
+              <div class="text-center px-5 py-3">
+                <img class="w-full" src="/img/slidesOhel/2.jpg" alt="">
+                <p>
+                  "מבשלים סיפור אהבה" 
+                </p>
+                <p> 
+    .בין אם אתם חוגגים אירוע משפחתי או פשוט רוצים ליהנות מאוכל טוב וחוויה מיוחדת במינה, תוכלו להתארח אצל שי וליז או להזמין ישירות לצימר
+                </p>
+                <p> 
+  ליצירת קשר שי: 054-7950994
+  ליז: 054-4709668
+                ​</p>
+              </div>                
+              <div class="text-center px-5 py-3">
+                <img class="w-full" src="/img/slidesOhel/4.jpg" alt="">
+                <p>
+                 החל מהשעה 17:00 ועד חצות תוכלו להזמין פיצה חמה  ישירות לצימר עם תוספות שאתם אוהבים וגם מבחר של סלטים ליד הפיצה. 
+  להזמנות ומשלוחים
+  נועה: 053-9419580 
+                </p>
+              </div>              
+              <div class="text-center px-5 py-3">
+                <img  class="w-full" src="/img/slidesOhel/5.jpg" alt="">
+                <p>
+                  במרחק של 5 דקות מאתנו 
+  ניתן לצאת לסיורים קולינריים בכפרים, שם תטעמו מאכלים מהעדה כמו עלי גפן, לאבנה, תטעמו קובה ולקינוח כנאפה חלומי.
+  יש אפשרות להזמין פלאפל וכנאפה ממספר מנות עד לצימר (בתיאום מראש) 
+                </p>
+              </div>
+              <div class="text-center px-5 py-3">
+                <img  class="w-full" src="/img/slidesOhel/6.jpg" alt="">
+                <p>
+                  כיום ניתן למצוא ברמת הגולן כ-18 יקבים בגדלים שונים, חלקם יקבי בוטיק, ואף כאלה
+  שהעלו את ישראל על מפת היין העולמית.
+  אז איזה יקבים יש בסביבתינו?
+  7 דק'  ליקב אודם,
+  10 דק' ליקב פלטר,
+  15 דק' ליקב אורטל.
+                </p>
+              </div>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+    <section id="ohel" class="text-center">
+      <hr class="border-white lg:mx-56 pb-12">
+      <h3 class="text-3xl font-bold py-2" style="font-family: 'Heebo'">אטרקציות בסביבה</h3> 
+    </section>
+     
+    <section class="carousel-area pb-12" style="font-family: 'Heebo'; font-weight: bold; font-size: 12px;">
+      <div class="container">
+        <div class="flex">
+          <div class="w-full relative">
+            <div class="zimmerAttrakziot">
+              <div class="text-center px-5 py-3">
+                <img class="w-full" src="/img/slidesAttrakziot/1.jpg" alt="">
+                <p>
+                  חוויה בלתי נשכחת בנופיו הקסומים של צפון הגולן.
+  ניתן להינות גם ממגוון סוגי טיולי ג'יפים, לאור יום או טיולי ספארי בחשיכה, שכוללים מפגשים עם חיות בר.
+  עם גג פתוח או סגור.
+  לפרטים נוספים
+  אילן הדר: 052-2703451
+  אילן שולמן: 052-8828480 
+  שלף:054-7744504
+                </p>                
+              </div>
+              <div class="text-center px-5 py-3">
+                <img class="w-full" src="/img/slidesAttrakziot/2.jpg" alt="">
+                <p>
+                  צאו לטיול רגלי במגוון מסלולים המותאמים למשפחות, קבוצות מאורגנות ולבעלי צרכים מיוחדים.
+                    לטיולים הרפתקניים לתוך לוע הר געש בנטל לאורו של הירח .                  ​
+                    דורון שמיר:052-65177444
+                ​</p>
+              </div>              
+              <div class="text-center px-5 py-3">
+                <img class="w-full" src="/img/slidesAttrakziot/3.jpg" alt="">
+                <p>
+                  החווה מציעה מגוון פעילויות לילדים ולמבוגרים.
+                    טיולי רכיבה מגוונים עם נוף משגע סביב הר בנטל ובשטחי המטעים של מרום גולן לטיולים אילו לא נדרש ניסיון רכיבה קודם.
+                    לפרטים נוספים ותיאום מראש:
+                    052-8514434
+  להזמנת מקום 
+  052-8514434 
+                </p>
+              </div>
+              <div class="text-center px-5 py-3">
+                <img  class="w-full" src="/img/slidesAttrakziot/4.jpg" alt="">
+                <p>
+                  טיולים מלווים על ידי צוות הדרכה מיומן ומנוסה, אין צורך בניסיון קודם. הנהיגה היא לבעלי רישיון לרכב פרטי. הנסיעה בכלים מסוג: טומקרים או טירקס. 
+                    שעות פעילות א'-ה' 09:00-16:00
+                    שישי :09:00-14:00
+                    שבת/חג : סגור
+                    להזמנות 04-6960483/ 052-8695832
+                </p>
+              </div>
+              <div class="text-center px-5 py-3">
+                <img  class="w-full" src="/img/slidesAttrakziot/5.jpg" alt="">
+                <p>
+                  צעד וחצי מהצימר ליער ארזים מושלם.
+                  מה אתם צריכים? מחצלת, פק"ל קפה ונשנושים
+                </p>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     
+    <a href="#" style="display: none" class="back-to-top w-10 h-10 fixed bottom-0 right-0 mb-5 mr-5 flex items-center justify-center rounded-full bg-blue-600 text-white text-lg z-20 hover:bg-blue-400">
+      <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <script src="https://kit.fontawesome.com/0d297be52e.js" crossorigin="anonymous"></script>
+    <script src='/js/jquery.min.js' type="application/javascript"></script>
+    <script src='/js/moment.min.js' type="application/javascript" ></script>
+    <script src='/js/fullcalendar.min.js' type="application/javascript"></script>
+    <script src="/js/ical_fullcalendar.js" type="application/javascript"></script>
+    <script src='/js/locale-all.js' type="application/javascript"></script>
+    <script src="/js/ical.min.js" type="application/javascript"></script>
+    <script src="/js/ical_events.js" type="application/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="/js/property.js"></script>      
+  </body>
+</html>
