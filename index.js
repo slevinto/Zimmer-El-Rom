@@ -19,7 +19,7 @@ app.get('/getCalendar', (req, res) => {
   if (req.query.property == 'Botz')
     command = command + 'https://ical.booking.com/v1/export?t=4a488311-a383-4796-91b8-cf3d8b877809'; 
   if (req.query.property == 'Etz')
-    command = command + 'https://ical.booking.com/v1/export?t=be55e736-dc66-4af9-9892-2051cbc26552'; 
+    command = command + 'https://ical.booking.com/v1/export?t=3ec950df-fed9-4ce4-8e71-4fcfbda7b057'; 
   child = exec(command, function(error, stdout, stderr) {
     res.status(200).send(stdout);
   })
