@@ -1,15 +1,16 @@
+function add_recur_events() {
+        $('#calendar').fullCalendar('addEventSource', expand_recur_events);  
+}
+      
+function load_ics(property){
+  $.get("/getCalendar?property=" + property, function(result){
+    $('#calendar').fullCalendar('addEventSource', fc_events(result, {color: "#F87171"}))
+  });  
+}
+    
 $(document).ready(function() {    
 
-    
-    function add_recur_events() {
-        $('#calendar').fullCalendar('addEventSource', expand_recur_events);  
-    }
-      
-    function load_ics(property){
-        $.get("/getCalendar?property=" + property, function(result){
-            $('#calendar').fullCalendar('addEventSource', fc_events(result, {color: "#F87171"}))
-        });  
-    }
+    $("#loader").show();
 
     $('#calendar').fullCalendar({
         header: {
@@ -31,57 +32,59 @@ $(document).ready(function() {
 
     let searchParams = new URLSearchParams(window.location.search);  
     
-    if (searchParams.get('property') == 'Botz')
-    {
-        $("#title")[0].innerText = "צימר אדמה";
-        $("#guests")[0].innerText = "3 אורחים";
-        $("#price")[0].innerText = " מחיר: 650 " + "\u20AA" + " לזוג " ;
-        $("#price2")[0].innerText =  "בן אדם נוסף מגיל שנתיים 100 " + "\u20AA"; 
-        $("#rule")[0].innerText = "הגעה מ 15:00, עזיבה עד 11:00";
-        $("#bed")[0].innerText = "מיטה זוגית, כורסה ניפתחת למיטה נוחה";        
+    $.get("https://docs.google.com/document/d/1JI6N6Kh88Kj8dplZnNofuuyphYPVB2um4YXvqoKWR9o/edit?usp=sharing").success(function(details){ 
+            
+        let zimmerDetails;
+        if (window.matchMedia("(max-width: 767px)").matches)  // this is mobile device
+        {   
+          zimmerDetails = JSON.parse($(details).find("div")[0].innerText);
+        }
+        else  // this is tablet or desktop device
+        {   
+          $(details).each((index, element) =>
+          {
+              if (element.innerText.startsWith("DOCS_modelChunk "))
+                  zimmerDetails = JSON.parse(JSON.parse(element.innerText.split("DOCS_modelChunk = ")[1].split(';')[0])[0].s);
+          });          
+        }
 
-        tns({
-            container: '.zimmerBotz',            
-            autoplay: true,
-            speed: 1000,
-            autoplayButtonOutput: false,
-            mouseDrag: true,
-            gutter: 15,
-            nav: false,            
-            controls: false, 
-            responsive: {
-              320: {
-                items: 1
-              }, 
-              640: {
-                items: 3
-              }
-
-            }                      
+        let currentZimmerDetails = searchParams.get('property') == 'Botz' ? zimmerDetails[1] : zimmerDetails[0];
+        currentZimmerDetails.sale.forEach((element) =>
+        {
+          $('#sale').append('<p style="margin: 10px">' + element + '</p>');
         });
 
-        $("#Etz")[0].style.display = 'none';
-    }   
-
-    if (searchParams.get('property') == 'Etz')
-    {
-        $("#title")[0].innerText = "צימר עץ";
-        $("#guests")[0].innerText = "6 אורחים";
-        $("#price")[0].innerText = " מחיר: 700 " + "\u20AA" + " לזוג " ;
-        $("#price2")[0].innerText = "בן אדם נוסף מגיל שנתיים 100 " + "\u20AA"; 
+        $("#title")[0].innerText = currentZimmerDetails.title;
+        $("#guests")[0].innerText = currentZimmerDetails.guestsNumber;
+        $("#price")[0].innerText = "  מחיר: " + currentZimmerDetails.price + " \u20AA " + " לזוג " ;
+        $("#price2")[0].innerText =  "בן אדם נוסף מגיל שנתיים 100 " + "\u20AA"; 
         $("#rule")[0].innerText = "הגעה מ 15:00, עזיבה עד 11:00";
-        $("#bed")[0].innerText = "מיטה זוגית, 4 כורסאות ניפתחות למיטה נוחה";
+        $("#bed")[0].innerText = currentZimmerDetails.bed;        
+
+        if (searchParams.get('property') == 'Botz')    
+        {
+          $("#Etz")[0].style.display = 'none';
+        }  
+        
+        if (searchParams.get('property') == 'Etz')
+        {
+          $('#fireplace')[0].style.display = 'none';
+          $("#Botz")[0].style.display = 'none';
+        } 
+
+        load_ics(searchParams.get('property'));
+        add_recur_events();
     
-        $('#fireplace')[0].style.display = 'none';
+        $("#loader").hide();
 
         tns({
-          container: '.zimmerEtz',            
+          container: '.zimmer' + searchParams.get('property'),            
           autoplay: true,
           speed: 1000,
           autoplayButtonOutput: false,
           mouseDrag: true,
           gutter: 15,
-          nav: false,
+          nav: false,            
           controls: false, 
           responsive: {
             320: {
@@ -90,12 +93,7 @@ $(document).ready(function() {
             640: {
               items: 3
             }
-          }                      
-        });
-        
-        $("#Botz")[0].style.display = 'none';
-    } 
-
-    load_ics(searchParams.get('property'));
-    add_recur_events();    
+          }  
+        });        
+    });
 })

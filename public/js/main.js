@@ -1,8 +1,8 @@
 $(document).ready(function() {    
 
   accessibility_rtl = true;
-  pixel_from_side = 20;
-  pixel_from_start = 80;
+  pixel_from_side = 190;
+  pixel_from_start = 21;
   
   window.onscroll = function () {
       var backToTop = document.querySelector(".back-to-top");
