@@ -44,7 +44,7 @@ $(document).ready(function() {
           $(details).each((index, element) =>
           {
               if (element.innerText.startsWith("DOCS_modelChunk "))
-                  zimmerDetails = JSON.parse(JSON.parse(element.innerText.split("DOCS_modelChunk = ")[1].split(';')[0])[0].s);
+                  zimmerDetails = JSON.parse(JSON.parse(element.innerText.split("DOCS_modelChunk = ")[1].split(';')[0]).chunk[0].s);
           });          
         }
 
