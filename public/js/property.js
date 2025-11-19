@@ -96,4 +96,12 @@ $(document).ready(function() {
           }  
         });        
     });
+
+    $.get("/getDetails", function(details){
+        console.log(JSON.parse(details).results.slice(0, 10));
+    }).success(function(details){    
+
+    $.get("/getDetailPlace", function(details){
+        console.log(JSON.parse(details));
+    }); });
 })
